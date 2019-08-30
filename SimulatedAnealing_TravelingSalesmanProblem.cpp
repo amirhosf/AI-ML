@@ -49,7 +49,7 @@ private:
     double T_end;//end temperature
     float beta;
     int citysize;
-    City *cities;//we want you to practice citiespointer in this lab
+    City *cities
 public:
 //help:   https://github.com/arjun-krishna/TSP/blob/master/simulatedAnnealing.cpp
     SimulatedAnnealing()
@@ -82,15 +82,8 @@ public:
         for(int j= 0 ; j<citysize; j++)
         {
 
-            //  cout<<town[j].return_x()<<"hi"<<endl;
-            // cout<<cities[j].return_x()<<"hi  cc"<<endl;
         }
-//        for (int i = 0 ; i<citysize-1;i++){
-//        int yy = cities[i].return_x();
-//        int xx = town[i].return_x();
-//        cout<<xx<<"what?"<<endl;
-//        cout<<yy<<"what city?"<<endl;
-//    }
+
         City *best;
         best = new City[citysize];
         int min_tour = travel_cost(town);
@@ -157,7 +150,7 @@ public:
         return p;
     }
 
-    int cost(City city1,City city2)
+    int cost(City city1,City city2)//this function calculates the dist using euclidian ditance between two cities
     {
         int x1=0;
         int y1=0;
@@ -168,10 +161,10 @@ public:
         y1=city1.return_y();
         x2=city2.return_x();
         y2=city2.return_y();
-        double x = x1 - x2; //calculating number to square in next step
+        double x = x1 - x2; 
         double y = y1 - y2;
         double dist;
-        dist = pow(x, 2) + pow(y, 2);//calculating Euclidean distance
+        dist = pow(x, 2) + pow(y, 2);
         dist = sqrt(dist);
         return dist;
     }
@@ -197,10 +190,7 @@ public:
     City* genRand(City *city)
     {
         int l,a,b;
-        //city = new City[citysize];
         City temp;
-        //temp = new City[citysize];
-        //temp = nullptr;
         l = citysize;
         a = rand()%l;
         //cout<<a<<endl;
@@ -209,8 +199,7 @@ public:
         temp = city[a];
         city[a] = city[b];
         city[b] = temp;
-        //int blah = city[a].return_x();
-        //cout<<blah<<"hi"<<endl;
+      
 
         return city;
         // }
@@ -219,10 +208,6 @@ public:
     {
         return travel_cost(cities);
     }
-//   ~SimulatedAnnealing()
-    // {
-    //      delete[] cities;
-    //  }
 };
 class Greedy
 {
