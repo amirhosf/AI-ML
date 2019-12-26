@@ -6,3 +6,5 @@ In this code I focused on ways to optimize [traveling salesman problem](https://
 Classic algorithm of solving this problem has exponential time complexity that is very slow.
 
 -------------------------------
+#Halma Board game 
+Using minimax algorithm with alpha beta pruning I created agents to play game of Halma.
